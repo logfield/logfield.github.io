@@ -1,0 +1,927 @@
+<html>
+  <head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Logfield</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75936646-1', 'auto');
+      ga('send', 'pageview', { 'page': location.pathname + location.search + location.hash});
+    </script>
+
+    <style type="text/css">
+      #masthead {
+        background-color: rgba(212, 212, 213, 0.2);
+      }
+
+      .hidden.menu {
+        display: none;
+      }
+
+      .masthead.segment {
+        min-height: 560px;
+      }
+
+      .masthead h1.ui.header {
+        margin-top: 1.5em;
+        margin-bottom: 0em;
+        font-size: 4em;
+        font-weight: normal;
+      }
+
+      .masthead h2 {
+        font-size: 1.7em;
+        font-weight: normal;
+      }
+
+      .ui.vertical.stripe {
+        padding: 8em 0em;
+      }
+
+      .ui.vertical.stripe h3 {
+        font-size: 2em;
+      }
+      .ui.vertical.stripe .button + h3,
+      
+      .ui.vertical.stripe p + h3 {
+        margin-top: 3em;
+      }
+
+      .ui.vertical.stripe .floated.image {
+        clear: both;
+      }
+
+      .ui.vertical.stripe p {
+        font-size: 1.33em;
+      }
+
+      .ui.vertical.stripe .horizontal.divider {
+        margin: 3em 0em;
+      }
+
+      .quote.stripe.segment {
+        padding: 0em;
+      }
+
+      .quote.stripe.segment .grid .column {
+        padding-top: 5em;
+        padding-bottom: 5em;
+      }
+
+      .footer.segment {
+        padding: 5em 0em;
+      }
+
+      .secondary.pointing.menu .toc.item {
+        display: none;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .ui.fixed.menu {
+          display: none !important;
+        }
+
+        .secondary.pointing.menu .item,
+        .secondary.pointing.menu .menu {
+          display: none;
+        }
+
+        .secondary.pointing.menu .toc.item {
+          display: block;
+        }
+
+        .masthead.segment {
+          min-height: 350px;
+        }
+
+        .masthead h1.ui.header {
+          font-size: 2em;
+          margin-top: 1.5em;
+        }
+
+        .masthead .button {
+          margin-bottom: 4em;
+        }
+
+        .masthead h2 {
+          margin-top: 0.5em;
+          font-size: 1.5em;
+        }
+      }
+    </style>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script>
+      $(document)
+      .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+      .visibility({
+      once: false,
+      onBottomPassed: function() {
+      $('.fixed.menu').transition('fade in');
+      },
+      onBottomPassedReverse: function() {
+      $('.fixed.menu').transition('fade out');
+      }
+      })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+      .sidebar('attach events', '.toc.item')
+      ;
+
+      })
+      ;
+    </script>
+  </head>
+  <body class="pushable">
+
+    <!-- Following Menu -->
+    <div class="ui large top fixed menu transition hidden">
+      <div class="ui container">
+        <a href="#servicos" class="item">Serviços</a>
+        <a href="#produtos" class="item">Produtos</a>
+        <a href="#clientes" class="item">Clientes</a>
+        <a href="#empresa" class="item">Empresa</a>
+        <a href="#contato" class="item">Contatos</a>
+        <a href="#" class="right item">
+          <img class="ui tiny image" src="images/logfield-logo.png"></img>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu left">
+      <a href="#servicos" class="item">Serviços</a>
+      <a href="#produtos" class="item">Produtos</a>
+      <a href="#clientes" class="item">Clientes</a>
+      <a href="#empresa" class="item">Empresa</a>
+      <a href="#contato" class="item">Contatos</a>
+    </div>
+
+
+    <!-- Page Contents -->
+    <div class="pusher">
+      <div id="masthead" class="ui vertical masthead center aligned segment">
+
+        <div class="ui container">
+          <div class="ui large secondary pointing menu">
+            <a class="toc item">
+              <i class="sidebar icon"></i>
+            </a>
+            <a href="#servicos" class="item">Serviços</a>
+            <a href="#produtos" class="item">Produtos</a>
+            <a href="#clientes" class="item">Clientes</a>
+            <a href="#empresa" class="item">Empresa</a>
+            <a href="#contato" class="item">Contatos</a>
+          </div>
+        </div>
+
+        <div class="ui text container content">
+          <h1 class="ui inverted header">
+            <img class="ui centered medium image" src="images/logfield-logo.png"></img>
+            <h2>Nós ajudamos empresas a inovar!</h2>
+            <a class="ui big primary button" href="#servicos">
+              Comece agora <i class="right arrow icon"></i>
+            </a>
+          </h1>
+        </div>
+      </div>
+
+      <div class="ui vertical stripe segment">
+        <div class="ui center aligned text container">
+          <h3 class="ui header">Nossas soluções</h3>
+        </div>
+        <br />
+        <br />
+        <div class="two column stackable ui middle grid container">
+          <div class="column">
+            <p>
+              Através de consultoria técnica e desenvolvimento de soluções de
+              hardware e software podemos transformar as suas idéias em produtos.
+              Atuamos em todas as fases do projeto desde sua concepção à
+              produção final.
+            </p>
+            <div class="row">
+              <div class="center aligned column">
+                <a class="ui medium button" href="#servicos">Conheça nossos serviços</a>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <p>
+              Nosso portfólio de produtos abrange equipamentos de comunicação,
+              coleta de dados de campo e sistemas web para gerenciamento dos
+              equipamentos e dados coletados.
+            </p>
+            <div class="row">
+              <div class="center aligned column">
+                <a class="ui medium button" href="#produtos">Conheça nossos produtos</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a name="servicos"></a>
+      <div class="ui vertical stripe">
+        <div class="ui text container">
+          <h3 class="ui header">Serviços</h3>
+          <p>
+            A Logfield oferece serviços de consultoria técnica e de
+            desenvolvimento de soluções de hardware e software para plataformas
+            desktop, web e mobile a fim de auxiliar nos projetos, produtos e
+            negócios de seus clientes.
+          </p>
+          <p>
+            O diferencial da Logfield é a sua versatilidade em atuar nas diversas
+            fases de um projeto, desde sua concepção até o seu lançamento,
+            agregando valor aos seus clientes através de conhecimentos em
+            diversas áreas tecnológicas.
+          </p>
+
+        </div>
+      </div>
+
+          <h4 class="ui horizontal divider header">
+            <i class="cubes icon"></i>
+            Áreas de atuação
+          </h4>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="ui centered cards">
+
+            <div class="card">
+              <div class="content">
+                <div class="header">Consultoria Técnica</div>
+                <div class="description">
+                  <ul>
+                    <li>
+                      Utilização de tecnologias 
+                    </li>
+                    <li>
+                      Estudo de viabilidade técnica
+                    </li>
+                    <li>
+                      Levantamento de especificações
+                    </li>
+                    <li>
+                      Análise de prazos
+                    </li>
+                    <li>
+                      Análise de custos 
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card">
+              <div class="content">
+                <div class="header">Hardware</div>
+                <div class="description">
+                  <ul>
+                    <li>
+                      Atualização tecnológica
+                    </li>
+                    <li>
+                      Design de circuitos digitais
+                    </li>
+                    <li>
+                      Design de circuitos analógicos
+                    </li>
+                    <li>
+                      Analise de custos de produção
+                    </li>
+                    <li>
+                       Gigas de teste
+                    </li>
+                    <li>
+                      Acompanhamento de produção
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <div class="header">Firmware</div>
+                <div class="description">
+                  <ul>
+                    <li>
+                      Firmware bare-metal
+                    </li>
+                    <li>
+                      Firmware com OS embarcado
+                    </li>
+                    <li>
+                      Protocolos de comunicação 
+                    </li>
+                    <li>
+                      Stack GPRS/GSM
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <div class="header">Linux Embarcado</div>
+                <div class="description">
+                  <ul>
+                    <li>
+                      Desenvolvimento de device drivers
+                    </li>
+                    <li>
+                      Port do kernel para novas placas
+                    </li>
+                    <li>
+                      Criação de board support packages (BSP)
+                    </li>
+                    <li>
+                      Adequação do kernel para Android
+                    </li>
+                    <li>
+                      Desenvolvimento de firmware
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <div class="header">Sistemas Embarcados</div>
+                <div class="description">
+                  <ul>
+                    <li>
+                      Integração entre sistemas
+                    </li>
+                    <li>
+                      Aplicações industriais
+                    </li>
+                    <li>
+                      Aplicações de telemetria
+                    </li>
+                    <li>
+                      Integração com sistemas Web
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <div class="header">Sistemas Web</div>
+                <div class="description">
+                  <ul>
+                    <li>
+                      Desenvolvimento de backends (Linux ou Windows)
+                    </li>
+                    <li>
+                      Desenvolvimento de frontends
+                    </li>
+                    <li>
+                      Integração entre sistemas
+                    </li>
+                    <li>
+                      Desenvolvimento de Web Services
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <div class="header">Softwares</div>
+                <div class="description">
+                  <ul>
+                    <li>
+                      Software desktop Windows, Linux e multiplataforma
+                    </li>
+                    <li>
+                      Softwares de configuração e teste para equipamentos eletrônicos
+                    </li>
+                    <li>
+                      Softwares de tratamento e análise de dados 
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <div class="header">Aplicações Mobile</div>
+                <div class="description">
+                  <ul>
+                    <li>
+                      Single page apps HTML5 multiplataforma
+                    </li>
+                    <li>
+                      Apps Android
+                    </li>
+                    <li>
+                      Integração com sistemas
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <a name="produtos"></a>
+      <div class="ui vertical stripe segment">
+        <div class="ui text container">
+          <h3 class="ui header">Produtos</h3>
+          <p>
+            A linha de produtos Logfield é composta de softwares e equipamentos
+            de telemetria para atender às mais diferentes necessidades do
+            mercado. Com desenvolvimento próprio, a Logfield se
+            diferencia por ofertar produtos já consolidados e também pela
+            customização e adequação de seus produtos às necessidades de seus
+            clientes.
+          </p>
+        </div>
+      </div>
+
+      <a name="lf002"></a>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h2 class="ui header">Modem Transparente - LF002</h2>
+
+              <p>
+                O Modem LF002 é um modem GSM/GPRS quadriband desenvolvido para
+                aplicações em que há necessidade de acesso remoto transparente à
+                equipamentos em campo.
+              </p>
+
+              <p>
+                A instalação é realizada junto ao equipamento do cliente e provê
+                um canal de comunicação TCP/IP transparente, ou seja, sem
+                alteração dos dados trafegados, entre o equipamento e seu
+                software original de configuração e acompanhamento.
+              </p>
+
+              <p>
+                Para os casos que o software original do equipamento não atue
+                como um servidor de conexões TCP/IP, impossibilitando assim a
+                comunicação direta por parte do modem, é possivel utilizar o
+                <a href="#proxy-logfield">Sistema de Comunicação Transparente -
+                Proxy Logfield</a> para permitir esta comunicação.
+              </p>
+
+              <p>
+                A comunicação com os equipamentos de campo é feita através de
+                uma interface serial RS232/RS485/TTL ou Ethernet.
+              </p>
+
+              <p>
+                A configuração dos parâmetros relativos à conexão GSM/GPRS tais
+                como IP/Domínio e porta TCP do servidor de comunicação pode ser
+                realizada por meio de um software de configuração local ou
+                remotamente via comandos AT.
+              </p>
+
+              <p>
+                Para garantir a comunicação em caso de falha de alguma operadora
+                de telefonia o modem permite a utilização de até 02 simcards de
+                diferentes operadoras.
+              </p>
+            </div>
+            <div class="six wide right floated column">
+              <img src="images/lf002.jpg" class="ui large bordered rounded image"></img>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a name="proxy-logfield"> </a>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h2 class="ui header">Sistema de Comunicação Transparente - Proxy Logfield</h2>
+              <p>
+                O sistema Proxy Logfield atua como um gerenciador de conexões
+                TCP/IP provendo comunicação entre os equipamentos de campo e os
+                seus respectivos softwares originais de configuração e
+                acompanhamento.
+              </p>
+
+              <p>
+                Foi desenvolvido para gerenciar a comunicação remota com os
+                equipamentos de campo quando há restrições da operadora de
+                telefonia que impossibilitem a comunicação direta, tais como IP
+                dinâmico, NAT, entre outros.
+              </p>
+
+              <p>
+                Pode ser utilizado em conjunto com o <a href="#lf002">Modem
+                Transparente - LF002</a> mas também é compatível com outros
+                modems de mercado que permitam iniciar uma conexão TCP/IP com o
+                servidor.
+              </p>
+
+              <p>
+                Além do gerenciamento de conexões TCP/IP o sistema efetua a
+                medição da quantidade de dados trafegados e da latência de
+                comunicação. Ao ser utilizado em conjunto com o
+                modem <a href="#lf002">Modem Transparente - LF002</a>, o sistema
+                permite também o monitoramento da tensão de alimentação e do
+                nível de sinal em dBm do modem em campo.
+              </p>
+
+              <p>
+                Estes dados podem ser visualizados através de relatórios e
+                gráficos ou baixados no formato Excel.
+              </p>
+
+              <h4 class="ui horizontal divider header">
+                <i class="settings icon"></i>
+                Funcionamento
+              </h4>
+
+              <p>
+                No sistema Proxy Logfield o usuário cadastra os diversos
+                equipamentos com os quais deseja comunicar em campo e atribui a
+                cada um deles duas portas TCP únicas, a <i>porta do
+                equipamento</i> e a <i>porta do usuário</i>.
+              </p>
+
+              <p>
+                O modem do equipamento deve ser configurado para se comunicar
+                via TCP/IP com o sistema na <i>porta do equipamento</i>
+                configurada para ele no sistema.
+              </p>
+
+              <p>
+                Quando o equipamento se conecta ao sistema ele se torna
+                disponível para comunicação. Para efetuar a comunicação o
+                software do equipamento deve ser configurado para se comunicar
+                via TCP/IP com o sistema na <i>porta do usuário</i>.
+              </p>
+
+              <p>
+                Caso o software do equipamento não possua a funcionalidade de
+                comunicar com o equipamento através de uma conexão TCP/IP,
+                somente serial por exemplo, pode-se utilizar softwares que
+                convertem a conexão serial para TCP/IP.
+              </p>
+
+              <p>
+              </p>
+
+
+            </div>
+            <div class="six wide right floated column">
+              <p>
+              <img src="images/proxy.png" class="ui large bordered rounded image"></img>
+              </p>
+              <br />
+              <br />
+              <br/ >
+              <p>
+              <img src="images/proxy-2.png" class="ui large bordered rounded image"></img>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a name="lf5102"></a>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h2 class="ui header">Remota de Telemetria - LF5102</h2>
+              <p>
+                A remota LF5102 é um equipamento para controle e monitoramento
+                remoto de sinais analógicos e digitais. Possui comunicação
+                GSM/GPRS com o <a href="#stairway">Sistema de Telemetria -
+                Stairway</a> para envio de dados e recebimento de parâmetros e
+                comandos.
+              </p>
+
+              <p>
+                Quanto à comunicação, a remota LF5102 pode operar conectada ao
+                sistema em modo tempo real, em que se encontra sempre conectada,
+                ou em modo baixo consumo, em que efetua comunicações pontuais em
+                períodos de tempo configurados, para aplicações em que há a
+                necessidade de baixo consumo de energia, como conjuntos
+                fotovoltaicos e demais sistemas alimentados à bateria.
+              </p>
+
+              <p>
+                Possui o seguinte conjunto de entradas e saídas:
+              </p>
+              <p>
+                Entradas:
+                <ul>
+                  <li><p>08 entradas analógicas (0-5V/0-10V/4-20mA)</p></li>
+                  <li><p>06 entradas digitais isoladas (seco/molhado/coletor aberto)</p></li>
+                  <li><p>06 contadores de pulso de 32 bits</p></li>
+                </ul>
+              </p>
+              <p>
+                Saídas:
+                <ul>
+                  <li><p>02 saídas analógicas (0-10V)</p></li>
+                  <li><p>12 saídas digitais (relé NA)</p></li>
+                </ul>
+              </p>
+
+              <p>
+                Para garantir a comunicação em caso de falha de alguma operadora de telefonia a remota permite a utilização de até 02 simcards de diferentes operadoras.
+              </p>
+            </div>
+            <div class="six wide right floated column">
+              <img src="images/lf002-1.jpg" class="ui large bordered rounded image"></img>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a name="stairway"></a>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h2 class="ui header">Sistema de Telemetria - Stairway</h2>
+              <p>
+                O Sistema de Telemetria Stairway é um sistema web para
+                supervisão, monitoramento e controle de dados enviados por
+                equipamentos de telemetria tais como remotas e coletores de
+                dados. Compatível com a <a href="#lf5102">Remota de Telemetria -
+                LF5102</a> é também compatível com outras remotas e
+                equipamentos.
+              </p>
+
+              <p>
+                Composto de base de dados, software de gestão da comunicação e
+                software de gestão dos dados, o sistema foi desenvolvido com o
+                objetivo de ser uma ferramenta completa para acompanhamento das
+                variáveis de campo monitoradas pelas remotas de telemetria.
+              </p>
+
+              <p>
+                Permite a integração com outros sistemas do cliente tais como
+                ERP's e/ou supervisórios através dos Modbus e OPC ou através da
+                utilização de webservices com formato negociável entre as
+                partes.
+              </p>
+
+              <p>
+                O sistema permite o cadastro e a edição de diversos entes
+                cadastrais tais como usuários, operadores, simcards,
+                equipamentos, registradores, fórmulas, setpoints de alarme e
+                outros bem como possibilita o acompanhamento das diversas
+                variáveis de medição através de relatórios e gráficos que
+                mostram desde o histórico de todas as medidas coletadas no tempo
+                até as últimas medidas e alarmes ocorridos por equipamento e/ou
+                por grupo de variáveis. Os dados de relatórios podem ser
+                acompanhados no sistema ou baixados para o formato Excel.
+              </p>
+
+            </div>
+            <div class="six wide right floated column">
+              <p>
+              <img src="images/stairway.png" class="ui large bordered rounded image"></img>
+              </p>
+
+              <p>
+              <img src="images/stairway-1.png" class="ui large bordered rounded image"></img>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a name="clientes"></a>
+
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="ten wide column">
+              <h3 class="ui header">Nossos clientes</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="eight wide column">
+              <h3 class="ui header">Compagas</h3>
+              <p>
+                A Compagas, Companhia Paranaense de Gás, é a empresa responsável
+                pela distribuição de gás natural no Paraná, atendendo clientes
+                dos segmentos residencial, comercial, industrial e veicular.
+              </p>
+            </div>
+            <div class="four wide right floated column">
+              <img src="images/compagas.png" class="ui small rounded image">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="ten wide column">
+              <h3 class="ui header">SCGÁS</h3>
+              <p>
+                A SCGÁS (Companhia de Gás de Santa Catarina) é a empresa
+                responsável pela distribuição do gás natural canalizado em Santa
+                Catarina. Criada em 1994, atua como uma sociedade de economia
+                mista e tem como acionistas: Celesc, Gaspetro, Mitsui Gás e
+                Infragás.
+              </p>
+            </div>
+            <div class="four wide right floated column">
+              <img src="images/scgas.png" class="ui small rounded image">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="ten wide column">
+              <h3 class="ui header">Landis+Gyr</h3>
+              <p>
+                Por mais de um século a Landis+Gyr tem ajudado o mundo a
+                gerenciar melhor a energia. Seus medidores e soluções permitem a
+                concessionárias e consumidores finais em todo o mundo aumentar a
+                sua eficiência energética, reduzir seus gastos com a energia e
+                contribuir para um uso sustentável de recursos naturais.
+              </p>
+            </div>
+            <div class="four wide right floated column">
+              <img src="images/landis+gyr.jpg" class="ui small rounded image">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="ten wide column">
+              <h3 class="ui header">Copel</h3>
+              <p>
+                A Copel foi criada em outubro de 1954, é a maior empresa do
+                Paraná e atua com tecnologia de ponta nas áreas de geração,
+                transmissão e distribuição de energia, além de telecomunicações.
+              </p>
+            </div>
+            <div class="four wide right floated column">
+              <img src="images/copel.png" class="ui small rounded image">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="ten wide column">
+              <h3 class="ui header">Lumicenter</h3>
+              <p>
+                Há 35 anos, o Grupo Lumicenter Lighting desenvolve e fabrica
+                produtos de iluminação com tecnologia, inovação e design, e
+                oferece de forma consistente e confiável um amplo escopo de
+                produtos com milhares de soluções convencionais e a LED para os
+                mais diversos tipos de ambientes.
+              </p>
+            </div>
+            <div class="four wide right floated column">
+              <img src="images/lumicenter.png" class="ui small rounded image">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="ten wide column">
+              <h3 class="ui header">Realmobi</h3>
+              <p>
+                O Grupo Realmobi é composto por empresas consolidadas, com
+                experiência de mais de 20 anos no mercado de controle de tráfego
+                e sistemas ITS (Intelligent Transportation Systems) e atuação em
+                todo o território nacional.
+              </p>
+            </div>
+            <div class="four wide right floated column">
+              <img src="images/realmobi.png" class="ui small rounded image">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a name="empresa"></a>
+
+      <div class="ui vertical segment stripe">
+        <div class="ui text container">
+          <h3 class="ui header">Quem somos?</h3>
+          <p>
+            A Logfield Engenharia foi criada no ano de 2014, com o propósito
+            de oferecer soluções inovadoras e de qualidade para o mercado de
+            telemetria bem como compartilhar o seu conhecimento e capacidade
+            com empresas parceiras no desenvolvimento de soluções
+            customizadas sob demanda.
+          </p>
+          <p>
+            Sediada em Curitiba a Logfield deseja se tornar referência no
+            mercado de tecnologia pelo fornecimento de produtos inovadores de
+            telemetria e por sua versatilidade em
+            utilizar diferentes tecnologias a fim fornecer serviços de
+            desenvolvimento de alta complexidade.
+          </p>
+          <p>
+            A Logfield tem como valores o respeito e o cuidado com o
+            cliente, a transparência nas relações com seus parceiros e
+            colaboradores e o cumprimento dos prazos estipulados.
+          </p>
+        </div>
+      </div>
+
+      <a name="contato"></a>
+      <div class="ui vertical stripe segment">
+        <div class="ui text container">
+          <h3 class="ui header">Entre em contato</h3>
+          <p>
+            Av. Visconde de Guarapuava, 3444, Sala 608 
+            <br />
+            Curitiba, Paraná, Brasil - 80250-220
+            <br />
+            <a href="tel:+55 41 3114-5401">+55 41 3114-5401</a>
+            <br />
+            <a href="mailto:contato@logfield.com.br">contato@logfield.com.br</a>
+            <br />
+          </p>
+          <h3 class="ui header">Venha nos visitar</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.9785353612424!2d-49.27671474889925!3d-25.43898113939899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce388c20900d9%3A0x86296e85a5638519!2sCond+Edif%C3%ADcio+Capitol+Executive+Center+-+Av.+Visc.+de+Guarapuava%2C+3444+-+Centro%2C+Curitiba+-+PR%2C+80250-220!5e0!3m2!1sen!2sbr!4v1459285670214" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+
+      <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+              <h4 class="ui inverted header">Serviços</h4>
+              <div class="ui inverted link list">
+                <a href="#servicos" class="item">Consutoria Técnica</a>
+                <a href="#servicos" class="item">Sistemas Embarcados</a>
+                <a href="#servicos" class="item">Sistemas Web</a>
+                <a href="#servicos" class="item">Aplicações Mobile</a>
+                <a href="#servicos" class="item">Software</a>
+              </div>
+            </div>
+            <div class="five wide column">
+              <h4 class="ui inverted header">Produtos</h4>
+              <div class="ui inverted link list">
+                <a href="#lf002" class="item">Modem Transparente - LF002</a>
+                <a href="#proxy-logfield" class="item">Sistema Tranparente - Proxy Logfield</a>
+                <a href="#lf5102" class="item">Remota de Telemetria - LF5102</a>
+                <a href="#stairway" class="item">Sistema de Telemetria - Stairway</a>
+              </div>
+            </div>
+            <div class="seven wide column">
+              <h4 class="ui inverted header">Contato</h4>
+              <p>
+                Avenida Sete de Setembro, 4214, Sala 1108
+                <br />
+                Curitiba, Paraná, Brasil - 80250-210
+                <br />
+
+                <a href="tel:+55 41 3114-5401">+55 41 3114-5401</a>
+                <br />
+                <a href="mailto:contato@logfield.com.br">contato@logfield.com.br</a>
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+      jQuery('.menu a').click(function(){
+      var match = jQuery(this).attr('href').match(/#\S+/);
+      ga('send', 'pageview', location.pathname + match[0]);
+      });
+      });
+    </script>
+  </body>
+</html>
